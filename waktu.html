@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUTOR DEKKKKK!!!!!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    
+    .greetings {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #e7d2f6;
+    }
+
+</style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="teks-nav" href="index.html">PRAKTIKUM PDW UCP 1</a>
+        <a href="index.html" id="nav-work" class="nav-link active">
+            beranda
+        </a>
+        <div class="dropdown">
+            <a href="#" id="nav-tugas" class="nav-link">
+                tentang saya <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="MV.html"> music dan video</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" id="nav-tugas" class="nav-link">
+                waktu sekarang <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="waktu.html">supaya gak lupa waktu</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="container">
+            <div class="text">
+                <p class="greetings" id="greetings"></p>
+                <p id="current-time"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container-footer">
+            <p>PRAKTIKUM PDW BOSSS</p>
+        </div>
+    </footer>
+    <script>
+        function updateGreetings() {
+            var today = new Date();
+            var currentHour = today.getHours();
+            var greetingsElement = document.getElementById('greetings');
+            var currentTimeElement = document.getElementById('current-time');
+            var greetings = '';
+
+            if (currentHour < 11) {
+                greetings = 'Hai good morning 🌄🌄🌄';
+            } else if (currentHour < 15) {
+                greetings = 'siang ini panasnya e 🔥🔥🔥';
+            } else if (currentHour < 18) {
+                greetings = 'mau mi malam 🌇🌇🌇';
+            } else {
+                greetings = 'good night 🌚🌚🌚';
+            }
+
+            greetingsElement.innerText = greetings;
+            currentTimeElement.innerText = 'supaya ingat waktu:' + today.toLocaleTimeString();
+        }
+
+        updateGreetings();
+        setInterval(updateGreetings, 1000);
+
+       
+        var slideIndex = 0;
+    </script>
+</body>
+
+</html>
